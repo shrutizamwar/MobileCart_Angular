@@ -1,0 +1,137 @@
+<div id="myAccount" class="active">
+    My Account
+    <div tab id="myAccountTabs" class="ui-tabs ui-widget ui-widget-content ui-corner-all ui-tabs-vertical ui-helper-clearfix">
+        <form id="updateCustomerForm">
+            <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
+                <li class="ui-state-default ui-tabs-active ui-state-active ui-corner-left" role="tab" tabindex="0" aria-controls="personalInformation" aria-labelledby="ui-id-1" aria-selected="true" aria-expanded="true"><a href="#personalInformation" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-1">Personal Information</a></li>
+                <li class="ui-state-default ui-corner-left" role="tab" tabindex="-1" aria-controls="contactInformation" aria-labelledby="ui-id-2" aria-selected="false" aria-expanded="false"><a href="#contactInformation" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-2">Contact Information</a></li>
+                <li class="ui-state-default ui-corner-left" role="tab" tabindex="-1" aria-controls="creditCardInformation" aria-labelledby="ui-id-3" aria-selected="false" aria-expanded="false"><a href="#creditCardInformation" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-3">Credit Card Information</a></li>
+                <li class="ui-state-default ui-corner-left" role="tab" tabindex="-1" aria-controls="passwordInformation" aria-labelledby="ui-id-4" aria-selected="false" aria-expanded="false"><a href="#passwordInformation" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-4"> Change Password</a></li>
+            </ul>
+            <div id="personalInformation" aria-labelledby="ui-id-1" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="false">
+                <h3>Personal Information</h3>
+                <hr>
+                <br>
+                <div class="row">
+                    <div>Name<span class="required-field"> *</span></div>
+                    <div>
+                        <input id="customerName" name="customerName" ng-model="customer.CustomerName" type="text" class="inline-form-element" required pattern="^[a-zA-Z0-9]*\S.*$">
+                        <span class="errorMessage"></span>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div>Gender</div>
+                    <div>
+                        <select id="gender" name="gender" ng-model="customer.Gender" class="inline-form-element">
+                            <option value="">Please select a Gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                        <span class="errorMessage"></span>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div>Username<span class="required-field"> *</span></div>
+                    <div>
+                        <input id="username" name="username" ng-model="customer.Username" type="text" class="inline-form-element" required pattern="^[a-zA-Z0-9]*$">
+                        <span class="errorMessage"></span>
+                    </div>
+
+                </div>
+                <input id="updatePersonalInfo" class="updateCustomer" type="button" value="SAVE CHANGES">
+            </div>
+            <div id="contactInformation" aria-labelledby="ui-id-2" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="true" style="display: none;">
+                <h3>Contact Information</h3>
+                <hr>
+                <br>
+                <div class="row">
+                    <div>Email Address<span class="required-field"> *</span></div>
+                    <div>
+                        <input id="emailAddress" name="emailAddress" ng-model="customer.EmailAddress" type="email" class="inline-form-element" required>
+                        <span class="errorMessage"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div>Contact Number</div>
+                    <div>
+                        <input id="contactNumber" name="contactNumber" ng-model="customer.ContactNumber" type="tel" placeholder="XXX-XXX-XXXX" class="inline-form-element" maxlength="12" pattern="^\d{3}-\d{3}-\d{4}$">
+                        <span class="errorMessage"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div>Address<span class="required-field"> *</span></div>
+                    <div>
+                        <textarea id="address" name="address" ng-model="customer.Address" class="inline-form-element" required></textarea>
+                        <span class="errorMessage"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div>Zipcode<span class="required-field"> *</span></div>
+                    <div>
+                        <input id="zipcode" name="zipcode" type="number" ng-model="customer.Zipcode" placeholder="XXXXX" class="inline-form-element" required min="10000" max="99999">
+                        <span class="errorMessage"></span>
+                    </div>
+                </div>
+                <input id="updateContactInfo" class="updateCustomer" type="button" value="SAVE CHANGES">
+            </div>
+            <div id="creditCardInformation" aria-labelledby="ui-id-3" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="true" style="display: none;">
+                <h3>Credit Card Information</h3>
+                <hr>
+                <br>
+                <div class="row">
+                    <div>Card Number<span class="required-field"> *</span></div>
+                    <div>
+                        <input id="creditCardNumber" name="creditCardNumber"  ng-model="customer.CreditCardNumber" type="text" class="inline-form-element" required pattern="^\d{16}$">
+                        <span class="errorMessage"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div>Card Name<span class="required-field"> *</span></div>
+                    <div>
+                        <input id="creditCardName" name="creditCardName" ng-model="customer.CreditCardName" type="text" class="inline-form-element" required pattern="^[a-zA-Z0-9]*\S.*$">
+                        <span class="errorMessage"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div>Card Expiry<span class="required-field"> *</span></div>
+                    <div>
+                        <input id="creditCardExpiry" name="creditCardExpiry" ng-model="customer.CreditCardExpiry" type="month" class="inline-form-element" required min="2015-08">
+                        <span class="errorMessage"></span>
+                    </div>
+                </div>
+                <input id="updateCreditCardInfo" class="updateCustomer" type="button" value="SAVE CHANGES">
+            </div>
+        </form>
+        <form id="updatePasswordForm">
+            <div id="passwordInformation" aria-labelledby="ui-id-4" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="true" style="display: none;">
+                <h3>Change Password</h3><span class="errorMessage mainErrorMessage"></span>
+                <hr>
+                <br>
+                <div class="row">
+                    <div>Old Password<span class="required-field"> *</span></div>
+                    <div>
+                        <input id="oldPassword" name="oldPassword" type="password" class="inline-form-element" required pattern="^[a-zA-Z0-9]*$">
+                        <span class="errorMessage"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div>New Password<span class="required-field"> *</span></div>
+                    <div>
+                        <input id="newPassword" name="newPassword" type="password" class="inline-form-element" required pattern="^[a-zA-Z0-9]*$">
+                        <span class="errorMessage"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div>Confirm New Password<span class="required-field"> *</span></div>
+                    <div>
+                        <input id="confirmNewPassword" name="confirmNewPassword" type="password" class="inline-form-element" required pattern="^[a-zA-Z0-9]*$">
+                        <span class="errorMessage"></span>
+                    </div>
+                </div>
+                <input id="updatePasswordInfo" class="updateCustomer" type="button" value="SAVE CHANGES">
+            </div>
+        </form>
+    </div>
+</div>

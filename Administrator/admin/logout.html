@@ -1,0 +1,22 @@
+<html>
+<head>
+<script type="text/javascript" src="../lib/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $("#logout").on("click", function(event){
+            $.ajax({
+                url:"../logout.php",
+                contentType:"application/x-www-form-urlencoded",
+                type: "GET",
+                success:function() {
+                    window.location.assign("http://"+window.location.host + "/MobileCart/Administrator/login/login.php");
+                },
+                error: function(){
+                    alert("error");
+                }
+            });
+        })
+    });
+</script>
+</head>
+</html>

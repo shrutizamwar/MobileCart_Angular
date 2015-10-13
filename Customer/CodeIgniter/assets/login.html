@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Mobile Cart</title>
+    <link rel="icon" href="images/mobile-cart.jpg">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <script type="text/javascript" src="lib/jquery.min.js"></script>
+    <script type="text/javascript" src="lib/jquery-ui-1.11.4.custom/jquery-ui.js"></script>
+    <link rel="stylesheet" href="lib/jquery-ui-1.11.4.custom/jquery-ui.css">
+
+    <script type="text/javascript" src="js/login.js"></script>
+</head>
+<body>
+    <div class="main-header">
+        <div class="logo">
+            <img src="images/mobile-cart-icon.jpg" height="50px"/>
+            <h3>MobileCart</h3>
+            <div style="clear: both"></div>
+        </div>
+        <div class="sign-options">
+            <ul>
+                <li id="signup"><a>Signup</a></li>
+                <li id="login"><a>Login</a></li>
+            </ul>
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+    <div class="phone-images">
+        <div><img src="images/iphone.png" class="image1"></div>
+        <div><img src="images/motorola.jpg" class="image2" height="500px"></div>
+        <div><img src="images/nokia.jpeg" class="image3" height="500px" width="400px"></div>
+        <div style="clear: both"></div>
+    </div>
+
+    <div id="loginModal" title="LOGIN">
+        <span class="errorMessage"></span>
+        <hr>
+            <form id="customer-login">
+                <div><input type="text" placeholder="Enter Username" class="inline-form-element" name="Username"/></div>
+                <div><input type="password" placeholder="Enter Password" class="inline-form-element" name="Password"></div>
+                <div><input id="login-btn" type="button" value="Login" class="login-btn"></div>
+                <br>
+            <p class="sign-up-link">New to MobileCart? <span>SIGNUP</span></p>
+        </form>
+    </div>
+
+    <div id="signUpModal" title="SIGNUP">
+        <hr>
+        <form id="customer-registration">
+            <div id="personal-information">
+                <p>Personal Information</p>
+                <div>
+                    <input name="customerName" type="text" placeholder="Enter Name" class="inline-form-element" required pattern="^[a-zA-Z0-9]*\S.*$"/>
+                    <span class="errorMessage"></span>
+                </div>
+                <div>
+                    <select name="gender" class="inline-form-element">
+                        <option value="">Please select a Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                    <span class="errorMessage"></span>
+                </div>
+                <div>
+                    <input name="username" type="text" placeholder="Enter Username" class="inline-form-element" required pattern="^[a-zA-Z0-9]*$"/>
+                    <span class="errorMessage"></span>
+                </div>
+                <div>
+                    <input id="password" name="password" type="password" placeholder="Enter Password" class="inline-form-element" required pattern="^[a-zA-Z0-9]*$"/>
+                    <span class="errorMessage"></span>
+                </div>
+                <div>
+                    <input id="confirm-password" type="password" placeholder="Confirm Password" class="inline-form-element" required pattern="^[a-zA-Z0-9]*$"/>
+                    <span class="errorMessage"></span>
+                    <span id="message"></span>
+                </div>
+                <p class="login-link">Already have an account? <span>LOGIN</span></p>
+                <div><input id="personal-information-btn" type="button" value="Continue >>" class="btn-left"></div>
+            </div>
+
+            <div id="contact-information">
+                <p>Contact Information</p>
+                <div>
+                    <input name="emailAddress" type="email" placeholder="Enter Email Address" class="inline-form-element" required/>
+                    <span class="errorMessage"></span>
+                </div>
+                <div>
+                    <input name="contactNumber" type="tel" placeholder="Enter Contact number XXX-XXX-XXXX" class="inline-form-element" maxlength="12" pattern="^\d{3}-\d{3}-\d{4}$"/>
+                    <span class="errorMessage"></span>
+                </div>
+                <div>
+                    <textarea name="address" placeholder="Enter Address" class="inline-form-element"></textarea>
+                    <span class="errorMessage"></span>
+                </div>
+                <div>
+                    <input name="zipcode" type="number" placeholder="Enter Pincode XXXXX" class="inline-form-element" required max="99999" min="10000"/>
+                    <span class="errorMessage"></span>
+                </div>
+                <p class="login-link">Already have an account? <span>LOGIN</span></p>
+                <div><input id="contact-information-btn" type="button" value="Continue >>" class="btn-left"></div>
+            </div>
+
+            <div id="credit-card-information">
+                <p>Credit Card Information</p>
+                <div>
+                    <input name="creditCardNumber" type="number" placeholder="Enter Credit Card number" class="inline-form-element" required min="1000000000000000" max="9999999999999999"/>
+                    <span class="errorMessage"></span>
+                </div>
+                <div>
+                    <input name="creditCardName" type="text" placeholder="Enter Credit Card name" class="inline-form-element" required pattern="^[a-zA-Z0-9]*\S.*$"/>
+                    <span class="errorMessage"></span>
+                </div>
+                <div>
+                    <input name="creditCardExpiry" type="month" class="inline-form-element" placeholder="Expiry date" required/>
+                    <span class="errorMessage"></span>
+                </div>
+                <p class="login-link">Already have an account? <span>LOGIN</span></p>
+                <div><input id="credit-card-information-btn" type="button" value="Submit" class="btn-left"></div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

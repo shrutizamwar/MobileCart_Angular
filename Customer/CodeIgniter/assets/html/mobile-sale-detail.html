@@ -1,0 +1,42 @@
+<div id="mobileDetails">
+    <div id="mobileDetailsBody" class="mobileDetailsBody">
+        <div class="mobileImage">
+            <img src="../../../../images/{{mobile.MainIcon}}">
+        </div>
+        <div class="mobileDetails">
+            <h2 class="mobileName">{{mobile.MobileName}}</h2>
+            <p>{{mobile.MobileDescription}}</p>
+            <ul>
+                <li> Screen Size {{mobile.ScreenSize}}</li>
+                <li> Primary Camera {{mobile.RearCamera}}</li>
+                <li> Secondary Camera {{mobile.FrontCamera}}</li>
+                <li> RAM {{mobile.RAM}}</li>
+                <li> Internal Memory {{mobile.InternalMemory}}</li>
+                <li> Extendable Memory {{mobile.ExtendableMemory}}</li>
+                <li> GPS {{mobile.GPS | checkmark}}</li>
+                <li> Bluetooth {{mobile.Bluetooth | checkmark}}</li>
+                <li> Infrared {{mobile.Infrared | checkmark}}</li>
+                <li> Other Features {{mobile.OtherFeatures}}</li>
+            </ul>
+        </div>
+        <div class="mobilePrice">
+            <h4>Selling Price</h4>
+            <span class="originalPrice" ng-if="mobile.OriginalPrice">{{mobile.OriginalPrice | currency}}</span><br>
+            <span class="price"> {{mobile.Price | currency}}</span>
+            <span class="salePercentage" ng-if="mobile.PercentageOff">{{mobile.PercentageOff}}% OFF</span>
+            <span class="saleEndDate" ng-if="mobile.EndDate">&nbsp;&nbsp;&nbsp;Offer valid till {{mobile.EndDate | date}}</span>
+            <form id="addToCartForm" name="addToCartForm"><br><br>
+                <label>Quantity
+                    <input style="width: 140px;" class="qty-text" value="1" ng-model="mobile.quantity" required type="number" min="1" max="100" step="none">
+                </label><p style="font-size: 12px;" class="errorMessage"></p><br><br>
+                <input class="action-btn" type="button" value="ADD TO CART" id="addToCart" ng-click="addToCart()">
+                <input value="7" type="hidden" ng-model="mobile.mobileID">
+                <input value="5" type="hidden" ng-model="mobile.saleID">
+            </form>
+        </div>
+    </div>
+    <!--   <div id="mobileSuggestion" class="mobileSuggestionBody">
+           <div id="suggestionMessage"></div>
+           <div class="mobileSuggestionRow"></div>
+       </div>-->
+</div>

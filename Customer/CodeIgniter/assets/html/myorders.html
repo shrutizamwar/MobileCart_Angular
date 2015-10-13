@@ -1,0 +1,31 @@
+<div id="myOrders">
+    <div id="orderDetails" accordion>
+        <div class="OrderItem" ng-repeat="(orderID,orderDetails) in orderList">
+            <h3 style='border: 1px solid #aaaaaa !important;background: #ECE9E9 !important;'>
+                <div class='orderRow'><span class='orderKey'>Order ID </span><span class='orderValue'>{{orderID}}</span></div>
+                <div class='orderRow orderDate'><span class='orderKey'>Order Date </span><span class='orderValue'>{{orderDetails.OrderDate}}</span></div>
+                <div class='orderRow orderTotal'><span class='orderKey'>Total: </span><span class='orderValue'>$ {{orderDetails.OrderTotal}}</span></div>
+            </h3>
+            <div>
+                <div class='orderItemRow' ng-repeat="orderItem in orderDetails.OrderItems">
+                    <div class='orderItemDetail orderItemImage'>
+                        <img src="../../../../images/{{orderItem.MainIcon}}">
+                    </div>
+                    <div class='orderItemDetail orderItemName'>
+                        <span>{{orderItem.MobileName}}</span>
+                        <p>Qty: {{orderItem.OrderQuantity}}</p>
+                    </div>
+                    <div class='orderItemDetail orderItemPrice'>
+                        <span>Price: $ {{orderItem.MobilePrice}}</span>
+                        <p style='color: green;' ng-if="orderITem.SaleID">Sale Offer Applied</p>
+                    </div>
+                    <div class='orderItemDetail orderItemSubTotal'>
+                        <span>Subtotal: $ {{orderItem.MobilePrice * orderItem.OrderQuantity}}</span>
+                    </div>
+                </div>
+                <div class='orderItemDetail orderDateBottom'><span class='orderKey'>Order Date </span><span class='orderValue'>{{order.OrderDate}}</span></div>
+                <div class='orderItemDetail orderTotalBottom'><span class='orderKey'>Total: </span><span class='orderValue'>{{order.OrderTotal}}</span></div>
+            </div>
+        </div>
+    </div>
+</div>

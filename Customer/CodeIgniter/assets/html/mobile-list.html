@@ -1,0 +1,46 @@
+<div id="homePage">
+    <div class="filter" ng-controller="filterCtrl">
+        <p class="filter-header">Browse</p>
+        <form name="searchOptions" id="searchOptions" action="javascript:void(0)">
+            <div>
+                <input id="searchInput" class="searchInput" type="search" placeholder="Search within mobiles" ng-model="filter.searchTerm">
+                <div style="display: inline;position: relative"><input id="searchTermBtn" type="button" class="searchBtn"></div>
+            </div>
+            <div class="searchByOperatingSystem">
+                <p class="category-name">Operating System</p>
+                <ul class="OSList">
+                    <li ng-repeat="system in systemList"><label><input type="checkbox" value="{{system.SystemID}}"  ng-model="filter.systemIDS" ng-change="getFilter()"/>{{system.SystemName}} </label></li>
+                </ul>
+            </div>
+            <div class="searchByBrands">
+                <p class="category-name">Brand</p>
+                <ul class="brandList">
+                    <li ng-repeat="brand in brandList"><label><input type="checkbox" value="{{brand.BrandID}}" ng-model="filter.brandIDS" ng-change="getFilter()"/>{{brand.BrandName}} </label></li>
+                </ul>
+            </div>
+        </form>
+    </div>
+    <div class="filterResults">
+        Search Results
+        <div class="filterResultsRows">
+            <div class="productColumn removeWrap" data-saleid="5" data-pid="7" ng-repeat="mobile in mobilesList">
+                <a ng-if="mobile.SaleID" href="#/mobiles/{{mobile.MobileID}}/{{mobile.SaleID}}"><img ng-src="../../../../images/{{mobile.MainIcon}}"></a><br>
+                <a ng-if="!mobile.SaleID" href="#/mobiles/{{mobile.MobileID}}"><img ng-src="../../../../images/{{mobile.MainIcon}}"></a><br>
+                <div ng-if="mobile.SaleID" style='position: relative;'><div class='offerDiv'>SPECIAL OFFER</div></div><br>
+                <div class="productColumnDetails">
+                    <br>
+                    <a ng-if="mobile.SaleID" href="#/mobiles/{{mobile.MobileID}}/{{mobile.SaleID}}"><span>{{mobile.MobileName}}</span></a>
+                    <a ng-if="!mobile.SaleID" href="#/mobiles/{{mobile.MobileID}}"><span>{{mobile.MobileName}}</span></a>
+                    <p> {{mobile.Price}}</p><ul>
+                    <li>{{mobile.Description}}</li>
+                    <li>{{mobile.ScreenSize}}</li>
+                    <li>{{mobile.RearCamera}}</li>
+                    <li>{{mobile.RAM}}</li>
+                </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="clear: both"></div>
+</div>
+

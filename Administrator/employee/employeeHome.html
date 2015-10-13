@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <link rel="stylesheet" href="../website.css">
+    <script type="text/javascript" src="../lib/jquery.min.js"></script>
+    <script type="text/javascript" src="employee.js"></script>
+    <script type="text/javascript" src="employeeValidations.js"></script>
+</head>
+<body>
+
+<div class="tabs">
+    <ul class="tab-links">
+        <li class="active"><a href="#addOS">Add OS</a></li>
+        <li class="updateList"><a href="#updateOS">Update OS</a></li>
+        <li class="deleteList"><a href="#deleteOS">Delete OS</a></li>
+        <li><a href="#addBrand">Add Brand</a></li>
+        <li class="updateBrandList"><a href="#updateBrand">Update Brand</a></li>
+        <li class="deleteBrandList"><a href="#deleteBrand">Delete Brand</a></li>
+        <li class="addProductTab"><a href="#addProduct">Add Product</a></li>
+        <li class="updateProductTab"><a href="#updateProduct">Update Product</a></li>
+        <li class="deleteProductTab"><a href="#deleteProduct">Delete Product</a></li>
+        <li class="addSaleTab"><a href="#addSale">Add Sale</a></li>
+        <li class="updateSaleTab"><a href="#updateSale">Update Sale</a></li>
+        <li class="deleteSaleTab"><a href="#deleteSale">Delete a Sale</a></li>
+    </ul>
+    <div class="tab-content">
+        <div id="addOS" class="tab active">
+            <form id="addForm" name="addForm">
+                <h3 class="sub-heading">Add Operating system</h3><hr>
+                <div>
+                    <div class="inline-form-element-wrapper">
+                        <label class ="form-label">Operating System Name<span class="required-field"> *</span></label>
+                        <input class="inline-form-element"  type="text" name="OSName" required/>
+                    </div>
+
+                    <div class="inline-form-element-wrapper">
+                        <label class ="form-label">System Description<span class="required-field"> *</span></label>
+                        <input class="inline-form-element" type="text" name="OSDescription" required/>
+                    </div>
+                    <span class="errMessage"></span>
+                </div>
+                <input id="addOSBtn" name="addOSBtn" type="button" value="Add" class="submit-btn">
+            </form>
+        </div>
+        <div id="updateOS" class="tab">
+            <h3 class="sub-heading">Update Operating system</h3><hr>
+            <div id="OSList">
+                <div class="row">
+                    <div class="column">System Name</div>
+                    <div class="column">System Description</div>
+                    <div class="column">System Update</div>
+                </div>
+                <div class ="dataRows">
+
+                </div>
+            </div>
+            <div id="updateOSForm">
+                <form id="updateForm" name="updateForm">
+                    <div>
+                        <input type="hidden" id="updateOSID" name="OSid"/>
+                        <div class="inline-form-element-wrapper">
+                            <label class ="form-label">Operating System Name<span class="required-field"> *</span></label>
+                            <input id="updateOSName" class="inline-form-element"  type="text" name="OSName" required/>
+                        </div>
+
+                        <div class="inline-form-element-wrapper">
+                            <label class ="form-label">System Description<span class="required-field"> *</span></label>
+                            <input id="updateOSDescription" class="inline-form-element" type="text" name="OSDescription" required/>
+                        </div>
+                        <span class="errMessage"></span>
+                    </div>
+                    <input id="updateOSBtn" name="updateOSBtn" type="button" value="Update" class="submit-btn">
+                </form>
+            </div>
+        </div>
+        <div id="deleteOS" class="tab">
+            <h3 class="sub-heading">Delete Operating system</h3><hr>
+            <div class="row">
+                <div class="column">SystemID</div>
+                <div class="column">System Name</div>
+                <div class="column">System Description</div>
+            </div>
+            <form id="deleteForm">
+                <div class ="dataRows">
+
+                </div>
+                <input id="deleteOSButton" name="deleteOSButton" type="button" value="Delete" class="submit-btn">
+            </form>
+        </div>
+        <div id="addBrand" class="tab">
+            <form id="addBrandForm" name="addBrandForm">
+                <h3 class="sub-heading">Add Brand</h3><hr>
+                <div>
+                    <div class="inline-form-element-wrapper">
+                        <label class ="form-label">Brand Name<span class="required-field"> *</span></label>
+                        <input class="inline-form-element"  type="text" name="BrandName" required/>
+                    </div>
+
+                    <div class="inline-form-element-wrapper">
+                        <label class ="form-label">Brand Description<span class="required-field"> *</span></label>
+                        <input class="inline-form-element" type="text" name="BrandDescription" required/>
+                    </div>
+                    <span class="errMessage"></span>
+                </div>
+                <input id="addBrandBtn" name="addBrandBtn" type="button" value="Add" class="submit-btn">
+            </form>
+        </div>
+        <div id="updateBrand" class="tab">
+            <h3 class="sub-heading">Update Brand</h3><hr>
+            <div id="brandList">
+                <div class="row">
+                    <div class="column">Brand Name</div>
+                    <div class="column">Brand Description</div>
+                    <div class="column">Brand Update</div>
+                </div>
+                <div class ="dataRows">
+
+                </div>
+            </div>
+            <div id="brandUpdateFrom">
+                <form id="updateBrandForm" name="updateForm">
+                    <div>
+                        <input type="hidden" id="updateBrandID" name="brandID"/>
+                        <div class="inline-form-element-wrapper">
+                            <label class ="form-label">Brand Name<span class="required-field"> *</span></label>
+                            <input id="updateBrandName" class="inline-form-element"  type="text" name="BrandName" required/>
+                        </div>
+
+                        <div class="inline-form-element-wrapper">
+                            <label class ="form-label">Brand Description<span class="required-field"> *</span></label>
+                            <input id="updateBrandDescription" class="inline-form-element" type="text" name="BrandDescription" required/>
+                        </div>
+                        <span class="errMessage"></span>
+                    </div>
+                    <input id="updateBrandBtn" name="updateBrandBtn" type="button" value="Update" class="submit-btn">
+                </form>
+            </div>
+        </div>
+        <div id="deleteBrand" class="tab">
+            <h3 class="sub-heading">Delete Brand</h3><hr>
+            <div class="row">
+                <div class="column">Brand ID</div>
+                <div class="column">Brand Name</div>
+                <div class="column">Brand Description</div>
+            </div>
+            <form id="deleteBrandFrom">
+                <div class ="dataRows">
+
+                </div>
+                <input id="deleteBrandBtn" name="deleteBrandBtn" type="button" value="Delete" class="submit-btn">
+            </form>
+        </div>
+        <div id="addProduct" class="tab">
+            <form id="addProductForm" name="addBrandForm" enctype="multipart/form-data">
+                <h3 class="sub-heading">Add Product</h3><hr>
+                <div class="form-section">
+                    <div class="inline-form-element-wrapper">
+                        <label class ="form-label">Mobile Name<span class="required-field"> *</span></label>
+                        <input class="inline-form-element"  type="text" name="MobileName" required pattern="\S.*\S"/>
+                    </div>
+
+                    <div class="inline-form-element-wrapper">
+                        <label class ="form-label">Mobile Description</label>
+                        <input class="inline-form-element" type="text" name="MobileDescription"/>
+                    </div>
+                    <div class="inline-form-element-wrapper">
+                        <label class ="form-label">Mobile Image<span class="required-field"> *</span></label>
+                        <input accept="image/*" class="inline-form-element" type="file" name="MobileMainIcon" required/>
+                    </div>
+                    <span class="errMessage"></span>
+                </div>
+                <div class="form-section">
+                    <div class="inline-form-element-wrapper">
+                        <label class ="form-label">Mobile Price (in dollars)<span class="required-field"> *</span></label>
+                        <input class="inline-form-element"  type="number" name="MobilePrice" required min="0" max="999999" step="any"/>
+                    </div>
+
+                    <div class="inline-form-element-wrapper">
+                        <label class ="form-label">Quantity<span class="required-field"> *</span></label>
+                        <input class="inline-form-element" type="number" name="Quantity"required min="0" max="999999" />
+                    </div>
+                    <span class="errMessage"></span>
+                </div>
+                <div class="form-section">
+                    <div class="inline-form-element-wrapper">
+                        <label class ="form-label">Mobile Operating System<span class="required-field"> *</span></label>
+                        <select id="MobileOS" class="inline-form-element"  type="text" name="MobileOS" required>
+                        </select>
+                    </div>
+
+                    <div class="inline-form-element-wrapper">
+                        <label class ="form-label">Mobile Brand<span class="required-field"> *</span></label>
+                        <select id="MobileBrand" class="inline-form-element" type="text" name="MobileBrand" required>
+                        </select>
+                    </div>
+                    <span class="errMessage"></span>
+                </div>
+                <div class="form-section">
+                    <div class="inline-form-element-wrapper">
+                        <label class ="form-label">Mobile Screen Size</label>
+                        <input class="inline-form-element"  type="text" name="MobileSize"/>
+                    </div>
+
+                    <div class="inline-form-element-wrapper">
+                        <label class ="form-label">Front Camera</label>
+                        <input class="inline-form-element" type="text" name="FrontCamera"/>
+                    </div>
+
+                    <div class="inline-form-element-wrapper">
+                        <label class ="form-label">Rear Camera</label>
+                        <input class="inline-form-element" type="text" name="RearCamera"/>
+                    </div>
+                </div>
+                <div class="form-section">
+                    <div class="inline-form-element-wrapper">
+                        <label class ="form-label">RAM<span class="required-field"> *</span></label>
+                        <input class="inline-form-element"  type="text" name="RAM" required/>
+                    </div>
+
+                    <div class="inline-form-element-wrapper">
+                        <label class ="form-label">Internal Memory<span class="required-field"> *</span></label>
+                        <input class="inline-form-element" type="text" name="InternalMemory" required/>
+                    </div>
+
+                    <div class="inline-form-element-wrapper">
+                        <label class ="form-label">External Memory<span class="required-field"> *</span></label>
+                        <input class="inline-form-element" type="text" name="ExternalMemory" required/>
+                    </div>
+                    <span class="errMessage"></span>
+                </div>
+                <div class="form-section">
+                    <div class="inline-form-element-wrapper">
+                        <label class ="form-label">Bluetooth</label>
+                        <input type="radio" name="Bluetooth" value = "Yes"/><label>Yes</label>
+                        <input type="radio" name="Bluetooth" value="No"/><label>No</label>
+                    </div>
+                    <div class="inline-form-element-wrapper">
+                        <label class ="form-label">Infrared</label>
+                        <input type="radio" name="Infrared" value = "Yes"/><label>Yes</label>
+                        <input type="radio" name="Infrared" value="No"/><label>No</label>
+                    </div>
+                    <div class="inline-form-element-wrapper">
+                        <label class ="form-label">GPS</label>
+                        <input type="radio" name="GPS" value = "Yes"/><label>Yes</label>
+                        <input type="radio" name="GPS" value="No"/><label>No</label>
+                    </div>
+                </div>
+                <div class="form-section">
+                    <div class="inline-form-element-wrapper">
+                        <label class ="form-label">Other features</label>
+                        <textarea class="form-element" name="OtherFeatures"></textarea>
+                    </div>
+                </div>
+                <input id="addProductBtn" name="addProductBtn" type="button" value="Add" class="submit-btn">
+            </form>
+        </div>
+        <div id="updateProduct" class="tab">
+            <h3 class="sub-heading">Update Product</h3><hr>
+            <div id="updateProductList">
+                <div class="row">
+                    <div class="column">Mobile Name</div>
+                    <div class="column">Mobile Price</div>
+                    <div class="column">Quantity</div>
+                    <div class="column">Mobile Update</div>
+                </div>
+                <div class ="dataRows">
+
+                </div>
+            </div>
+            <div id="productUpdateForm">
+                <form id="updateProductForm" name="updateForm" enctype="multipart/form-data">
+                    <input type="hidden" id="updateMobileID" name="updateMobileID"/>
+                    <div class="form-section">
+                        <div class="inline-form-element-wrapper">
+                            <label class ="form-label">Mobile Name<span class="required-field"> *</span></label>
+                            <input id="updateMobileName" class="inline-form-element"  type="text" name="MobileName" required pattern="\S.*\S"/>
+                        </div>
+
+                        <div class="inline-form-element-wrapper">
+                            <label class ="form-label">Mobile Description</label>
+                            <input id="updateMobileDescription" class="inline-form-element" type="text" name="MobileDescription"/>
+                        </div>
+                        <div class="inline-form-element-wrapper">
+                            <label class ="form-label">Mobile Price<span class="required-field"> *</span></label>
+                            <input id="updateMobilePrice" class="inline-form-element"  type="number" name="MobilePrice" required min="0" max="999999" step="any"/>
+                        </div>
+                        <span class="errMessage"></span>
+                    </div>
+                    <div class="form-section">
+                        <div class="inline-form-element-wrapper">
+                            <label class ="form-label">Quantity<span class="required-field"> *</span></label>
+                            <input id="updateQuantity" class="inline-form-element" type="number" name="Quantity" required min="0" max="999999"/>
+                        </div>
+                        <div class="inline-form-element-wrapper">
+                            <label class ="form-label">Mobile Operating System<span class="required-field"> *</span></label>
+                            <select id="updateMobileOS" class="inline-form-element"  type="text" name="MobileOS" required>
+                            </select>
+                        </div>
+
+                        <div class="inline-form-element-wrapper">
+                            <label class ="form-label">Mobile Brand<span class="required-field"> *</span></label>
+                            <select id="updateMobileBrand" class="inline-form-element" type="text" name="MobileBrand" required>
+                            </select>
+                        </div>
+                        <span class="errMessage"></span>
+                    </div>
+                    <div class="form-section">
+                        <div class="inline-form-element-wrapper">
+                            <label class ="form-label">Mobile Screen Size</label>
+                            <input id="updateMobileSize" class="inline-form-element"  type="text" name="MobileSize"/>
+                        </div>
+
+                        <div class="inline-form-element-wrapper">
+                            <label class ="form-label">Front Camera</label>
+                            <input id="updateFrontCamera" class="inline-form-element" type="text" name="FrontCamera"/>
+                        </div>
+
+                        <div class="inline-form-element-wrapper">
+                            <label class ="form-label">Rear Camera</label>
+                            <input id="updateRearCamera" class="inline-form-element" type="text" name="RearCamera"/>
+                        </div>
+                    </div>
+                    <div class="form-section">
+                        <div class="inline-form-element-wrapper">
+                            <label class ="form-label">RAM<span class="required-field"> *</span></label>
+                            <input id="updateRAM" class="inline-form-element"  type="text" name="RAM" required/>
+                        </div>
+
+                        <div class="inline-form-element-wrapper">
+                            <label class ="form-label">Internal Memory<span class="required-field"> *</span></label>
+                            <input id="updateInternalMemory" class="inline-form-element" type="text" name="InternalMemory" required/>
+                        </div>
+
+                        <div class="inline-form-element-wrapper">
+                            <label class ="form-label">External Memory<span class="required-field"> *</span></label>
+                            <input id="updateExternalMemory" class="inline-form-element" type="text" name="ExternalMemory" required/>
+                        </div>
+                        <span class="errMessage"></span>
+                    </div>
+                    <div class="form-section">
+                        <div class="inline-form-element-wrapper">
+                            <label class ="form-label">Bluetooth</label>
+                            <input type="radio" name="updateBluetooth" value ="Yes"/><label>Yes</label>
+                            <input type="radio" name="updateBluetooth" value="No"/><label>No</label>
+                        </div>
+                        <div class="inline-form-element-wrapper">
+                            <label class ="form-label">Infrared</label>
+                            <input type="radio" name="updateInfrared" value = "Yes"/><label>Yes</label>
+                            <input type="radio" name="updateInfrared" value= "No"/><label>No</label>
+                        </div>
+                        <div class="inline-form-element-wrapper">
+                            <label class ="form-label">GPS</label>
+                            <input type="radio" name="updateGPS" value = "Yes"/><label>Yes</label>
+                            <input type="radio" name="updateGPS" value= "No"/><label>No</label>
+                        </div>
+                    </div>
+                    <div class="form-section">
+                        <div class="inline-form-element-wrapper">
+                            <label class ="form-label">Other features</label>
+                            <textarea id="updateOtherFeatures" class="form-element" name="OtherFeatures"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-section">
+                        <div class="inline-form-element-wrapper">
+                            <label class ="form-label">Mobile Image</label>
+                            <input id="updateMobileMainIcon" class="inline-form-element" type="file" name="MobileMainIcon"/>
+                        </div>
+
+                    </div>
+                    <div class="form-section">
+                        <div class="inline-form-element-wrapper">
+                            <label class ="form-label">Present Image</label>
+                            <img id="updateMobileIcon" class="product-icon"/>
+                        </div>
+                    </div>
+                    <input id="updateProductBtn" name="updateProductBtn" type="button" value="Update" class="submit-btn">
+                </form>
+            </div>
+        </div>
+        <div id="deleteProduct" class="tab">
+            <h3 class="sub-heading">Delete Product</h3><hr>
+            <div class="row">
+                <div class="column">Mobile ID</div>
+                <div class="column">Mobile Name</div>
+                <div class="column">Mobile Price</div>
+                <div class="column">Quantity</div>
+            </div>
+            <form id="deleteProductForm">
+                <div class ="dataRows">
+
+                </div>
+                <input id="deleteProductBtn" name="deleteProductBtn" type="button" value="Delete" class="submit-btn">
+            </form>
+
+        </div>
+        <div id="addSale" class="tab">
+            <form id="addSaleForm" name="addForm">
+                <h3 class="sub-heading">Add a Sale</h3><hr>
+                <div class="form-section">
+                    <div class="inline-form-element-wrapper">
+                        <label class ="form-label">Mobile Name<span class="required-field"> *</span></label>
+                        <select id="mobileNameList" class="inline-form-element" name="mobileID" required>
+                        </select>
+                    </div>
+
+                    <div class="inline-form-element-wrapper">
+                        <label class ="form-label">Percent Discount %<span class="required-field"> *</span></label>
+                        <input class="inline-form-element" type="number" name="percentDiscount" required min="0" max="100" step="any"/>
+                    </div>
+                    <span class="errMessage"></span>
+                </div>
+                <div class="form-section">
+                    <div class="inline-form-element-wrapper">
+                        <label class ="form-label">Sale Start Date<span class="required-field"> *</span></label>
+                        <input class="inline-form-element" type="date" name="saleStartDate" required/>
+                    </div>
+
+                    <div class="inline-form-element-wrapper">
+                        <label class ="form-label">Sale End Date<span class="required-field"> *</span></label>
+                        <input class="inline-form-element" type="date" name="saleEndDate" required/>
+                    </div>
+                    <span class="errMessage"></span>
+                </div>
+                <input id="addSaleBtn" name="addOSBtn" type="button" value="Add" class="submit-btn">
+            </form>
+        </div>
+        <div id="updateSale" class="tab">
+            <h3 class="sub-heading">Update Sale</h3><hr>
+            <div id="saleList">
+                <div class="row">
+                    <div class="column">Mobile Name</div>
+                    <div class="column">Percentage Off</div>
+                    <div class="column">Start Date</div>
+                    <div class="column">End Date</div>
+                    <div class="column">Sale Update</div>
+                </div>
+                <div class ="dataRows">
+
+                </div>
+            </div>
+            <div id="saleUpdateForm">
+                <form id="updateSaleForm" name="addForm">
+                    <div class="form-section">
+                        <input type="hidden" id="updateSaleID" name="saleID"/>
+                        <div class="inline-form-element-wrapper">
+                            <label class ="form-label">Mobile Name<span class="required-field"> *</span></label>
+                            <select id="mobileNameListUpdate" class="inline-form-element" name="mobileID" required>
+                            </select>
+                        </div>
+
+                        <div class="inline-form-element-wrapper">
+                            <label class ="form-label">Percent Discount %<span class="required-field"> *</span></label>
+                            <input id="updatePercentDiscount" class="inline-form-element" type="number" name="percentDiscount" required min="0" max="100" step="any"/>
+                        </div>
+                        <span class="errMessage"></span>
+                    </div>
+                    <div class="form-section">
+                        <div class="inline-form-element-wrapper">
+                            <label class ="form-label">Sale Start Date<span class="required-field"> *</span></label>
+                            <input id="updateSaleStartDate" class="inline-form-element" type="date" name="saleStartDate" required/>
+                        </div>
+
+                        <div class="inline-form-element-wrapper">
+                            <label class ="form-label">Sale End Date<span class="required-field"> *</span></label>
+                            <input id = "updateSaleEndDate" class="inline-form-element" type="date" name="saleEndDate" required/>
+                        </div>
+                        <span class="errMessage"></span>
+                    </div>
+                    <input id="updateSaleBtn" name="addOSBtn" type="button" value="Update" class="submit-btn">
+                </form>
+            </div>
+        </div>
+        <div id="deleteSale" class="tab">
+            <h3 class="sub-heading">Delete Sale</h3><hr>
+            <div class="row">
+                <div class="column">Sale ID</div>
+                <div class="column">Mobile Name</div>
+                <div class="column">Percentage Off</div>
+                <div class="column">Start Date</div>
+                <div class="column">End Date</div>
+            </div>
+            <form id="deleteSaleForm">
+                <div class ="dataRows">
+
+                </div>
+                <input id="deleteSaleBtn" name="deleteSaleBtn" type="button" value="Delete" class="submit-btn">
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

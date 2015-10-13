@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Mobile Cart</title>
+    <link rel="icon" href="../images/mobile-cart.jpg">
+    <link rel="stylesheet" type="text/css" href="../css/customer.css">
+    <script type="text/javascript" src="../lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../lib/jquery-ui-1.11.4.custom/jquery-ui.js"></script>
+    <link rel="stylesheet" href="../lib/jquery-ui-1.11.4.custom/jquery-ui.css">
+
+    <script src="../lib/angular.js"></script>
+    <script src="../lib/angular-route.js"></script>
+    <script src="../lib/angular-resource.js"></script>
+
+    <script src="../js/app.js"></script>
+    <script src="../js/controllers.js"></script>
+    <script src="../js/services.js"></script>
+    <script src="../js/filters.js"></script>
+    <script src="../js/directive.js"></script>
+</head>
+<body ng-app="mobileCartApp">
+    <div class="main-header">
+        <button class="category-btn" id="category-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <a href="#/mobiles"><div class="logo">
+            <img src="../images/mobile-cart-icon.jpg" height="50px"/>
+            <h3>MobileCart</h3>
+            <div style="clear: both"></div>
+        </div></a>
+    <div class="header-options" ng-controller="headerCtrl">
+
+        <button class="nav-btn" id="nav-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul>
+            <li id="my-account"><span class="my-icon ui-icon ui-icon-person"></span><a href="#/myaccount">My Account</a></li>
+            <li id="my-orders"><span class="my-icon ui-icon ui-icon-suitcase"></span><a href="#/myorders">My Orders</a></li>
+            <li id="my-cart">
+                <span class="my-icon ui-icon ui-icon-cart"></span>
+                <a style="float: left;float: left;margin: 0;padding: 0 0 0 10px;" href="#/mycart">My Cart</a>
+                <span id="item-in-cart">{{cartCount}}</span>
+            </li>
+            <li id="logout"><a ng-click="signOut()">Logout</a></li>
+        </ul>
+    </div>
+    <div style="clear: both;"></div>
+    </div>
+
+    <div class="ui-widget silentMessage" style="visibility: hidden;width: 300px; margin: 0 auto;">
+        <div class="ui-state-highlight ui-corner-all" style="margin-top: 20px; padding: 0 .7em;height: 43px;font-size: 15px;border: 1px solid #AFD5F0;">
+            <p>
+                <span class="ui-icon ui-icon-info" style="float: left; margin-right: .3em;"></span>
+                <span class="message"></span>
+            </p>
+        </div>
+    </div>
+
+    <div id="tab-contents" ng-view></div>
+</body>
+</html>

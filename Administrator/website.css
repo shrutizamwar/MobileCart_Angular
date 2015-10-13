@@ -1,0 +1,228 @@
+body{
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px !important;
+    line-height: 1.42857143;
+    color: #333;
+    background: url("../images/NB-Dp4Apps-background.jpg") no-repeat center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+a{
+    outline: none;
+}
+
+.admin-btn-face{
+    padding: 23px 40px;
+    color: #fff;
+    background-color: #337ab7;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 13px 14px 0 0;
+    font-size: 14px;
+    font-weight: bolder;
+}
+
+.btn-face{
+    padding: 6px 12px;
+    color: #fff;
+    background-color: #337ab7;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 13px 14px 0 0;
+    font-size: 14px;
+    font-weight: bolder;
+}
+
+.errorMessage{
+    margin: 0 auto;
+    padding: 15px;
+    max-width: 330px;
+    color:red;
+}
+
+/** Admin Pages*/
+.admin-form-container{
+    display: inline-flex;
+    margin: 115px 0 0 60px;
+    background: rgba(255, 255, 255, 0.47);
+    padding: 75px;
+    border-radius: 10px;
+}
+
+#addUserForm{
+    background: white;
+    padding-bottom: 26px;
+}
+
+#changeUpdateForm{
+    background: white;
+    padding-bottom: 26px;
+}
+
+/**/
+
+.btn-left{
+    float: left;
+    padding: 6px 12px;
+    color: #fff;
+    background-color: #337ab7;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 13px 0 0 0;
+    font-size: 14px;
+    font-weight: bolder;
+}
+
+
+.sub-heading{
+    text-align: left;
+}
+
+.form-container{
+    max-width: 1000px;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+.inline-form-element-wrapper{
+    margin: 15px 0 -5px 15px;
+    display:inline-block;
+}
+
+.inline-form-element{
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    background-image: none;
+}
+
+.form-label{
+    display: block;
+    font-weight: bold;
+}
+
+.submit-btn{
+    float: right;
+    padding: 6px 12px;
+    color: #fff;
+    background-color: #337ab7;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: -13px 30px 0 0;
+    font-weight: bolder;
+}
+
+.row{
+    display:table-row;
+    width:auto;
+    clear:both;
+    background-color: rgba(86,61,124,.15);
+    border: 1px solid rgba(86,61,124,.2);
+}
+
+.column{
+    float:left;
+    display:table-column;
+    width:152px;
+    text-align: center;
+    border: 1px solid rgba(86,61,124,.2);
+    padding:9px;
+    height:40px
+}
+
+.dataRows{
+    height: 350px;
+    overflow: auto;
+}
+
+.searchResults{
+    height: 280px;
+    overflow: auto;
+}
+/** tabs*/
+
+.tabs {
+    width:100%;
+    display:inline-block;
+}
+
+.tab-links:after {
+    display:block;
+    clear:both;
+    content:'';
+}
+
+.tab-links li {
+    margin:0px 5px;
+    float:left;
+    list-style:none;
+}
+
+.tab-links a {
+    padding:9px 5px;
+    display:inline-block;
+    border-radius:3px 3px 0px 0px;
+    font-size:14px;
+    font-weight:600;
+    transition:all linear 0.15s;
+    text-decoration: none;
+    background: #fff;
+    color: #4c4c4c;
+}
+
+.tab-links a:hover {
+    background:#a7cce5;
+    text-decoration:none;
+}
+
+li.active a, li.active a:hover {
+    background:#fff;
+    color:#4c4c4c;
+}
+
+/*----- Content of Tabs -----*/
+.tab-content {
+    padding:15px;
+    border-radius:3px;
+    box-shadow:-1px 1px 1px rgba(0,0,0,0.15);
+    background:#fff;
+}
+
+.tab {
+    display:none;
+}
+
+.tab.active {
+    display:block;
+}
+
+.logout{
+    float: right;
+    margin-right: 30px;
+}
+.welcome-msg{
+    float:left;
+    margin-left: 50px;
+    color:#ffffff;
+}
+
+.product-icon{
+    height:200px;
+    width:200px;
+}
+
+.errMessage{
+    color:red;
+}
+
+.required-field{
+    color:red;
+}

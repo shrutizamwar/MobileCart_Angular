@@ -1,0 +1,391 @@
+<html>
+<head lang="en">
+    <link rel="stylesheet" href="../website.css">
+    <script type="text/javascript" src="../lib/jquery.min.js"></script>
+    <script type="text/javascript" src="manager.js"></script>
+    <script type="text/javascript" src="managerValidation.js"></script>
+</head>
+<body>
+    <div class="tabs">
+        <ul class="tab-links">
+            <li class="active"><a href="#byMobileName">Mobile Name</a></li>
+            <li class="byBrandNameTab"><a href="#byBrandName">Brand Name</a></li>
+            <li class="byOSTab"><a href="#byOS">Operating System</a></li>
+            <li><a href="#byMobilePrice">Price Range</a></li>
+            <li class="byAllOptions"><a href="#byallMobileOptions">All Mobile Options</a></li>
+            <li><a href="#byUserName">Username</a></li>
+            <li><a href="#byUserType">User Type</a></li>
+            <li><a href="#byUserPay">User Pay Range</a></li>
+            <li><a href="#byAllUserOptions">All User Options</a></li>
+            <li class="bySaleTab"><a href="#bySale">Sale Options</a></li>
+            <li class="byOrderTab"><a href="#byOrder">Order Options</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab active" id ="byMobileName">
+                <h3 class="sub-heading">Search By Mobile Name</h3><hr>
+                <form id="mobileNameForm">
+                    <div class="inline-form-element-wrapper">
+                        <label class ="form-label">Mobile Name</label>
+                        <input type="text" class="inline-form-element" name="mobileSearchTerm" >
+                        <input id="byMobileNameBtn" type="button" value="Search" class="btn-face">
+                    </div>
+                </form>
+                <div class="row">
+                    <div class="column">Mobile Name</div>
+                    <div class="column">Mobile Price</div>
+                    <div class="column">Quantity</div>
+                    <div class="column">Screen Size</div>
+                    <div class="column">Internal Memory</div>
+                    <div class="column">RAM</div>
+                </div>
+                <div class="searchResults"></div>
+            </div>
+            <div class="tab" id="byBrandName">
+                <h3 class="sub-heading">Search Mobile by Brand Name</h3><hr>
+                <form id="mobileBrandForm">
+                    <div class="inline-form-element-wrapper">
+                        <label class ="form-label">Brand Name</label>
+                        <select id="brandList" class="inline-form-element" name="mobileSearchTerm">
+
+                        </select>
+                        <input id="byMobileBrandNameBtn" type="button" value="Search" class="btn-face">
+                    </div>
+                </form>
+                <div class="row">
+                    <div class="column">Mobile Name</div>
+                    <div class="column">Mobile Price</div>
+                    <div class="column">Quantity</div>
+                    <div class="column">Screen Size</div>
+                    <div class="column">Internal Memory</div>
+                    <div class="column">RAM</div>
+                </div>
+                <div class="searchResults"></div>
+            </div>
+            <div class="tab" id="byOS">
+                <h3 class="sub-heading">Search Mobile by Operating System</h3><hr>
+                <form id="mobileOSForm">
+                    <div class="inline-form-element-wrapper">
+                        <label class ="form-label">System Name</label>
+                        <select id="OSList" class="inline-form-element" name="mobileSearchTerm">
+
+                        </select>
+                        <input id="byMobileOSBtn" type="button" value="Search" class="btn-face">
+                    </div>
+                </form>
+                <div class="row">
+                    <div class="column">Mobile Name</div>
+                    <div class="column">Mobile Price</div>
+                    <div class="column">Quantity</div>
+                    <div class="column">Screen Size</div>
+                    <div class="column">Internal Memory</div>
+                    <div class="column">RAM</div>
+                </div>
+                <div class="searchResults"></div>
+            </div>
+            <div class="tab" id="byMobilePrice">
+                <h3 class="sub-heading">Search Mobile by Price Range</h3><span class="errMessage"></span><hr>
+                <form id="mobilePriceForm">
+                    <div>
+                        <div class="inline-form-element-wrapper">
+                            <label class ="form-label">Price from</label>
+                            <input type="number" class="inline-form-element" name="mobilePriceFrom" min="0" max="999999" step="any">
+                        </div>
+                        <div class="inline-form-element-wrapper">
+                            <label class ="form-label">Price To</label>
+                            <input type="number" class="inline-form-element" name="mobilePriceTo" min="0" max="999999" step="any">
+                        </div>
+                        <input id="byMobilePriceBtn" type="button" value="Search" class="btn-face">
+                    </div>
+                </form>
+                <div class="row">
+                    <div class="column">Mobile Name</div>
+                    <div class="column">Mobile Price</div>
+                    <div class="column">Quantity</div>
+                    <div class="column">Screen Size</div>
+                    <div class="column">Internal Memory</div>
+                    <div class="column">RAM</div>
+                </div>
+                <div class="searchResults"></div>
+            </div>
+            <div class="tab" id="byUserType">
+                <h3 class="sub-heading">Search Users by Type</h3><hr>
+                <form id="userTypeForm">
+                    <div>
+                        <div class="inline-form-element-wrapper">
+                            <label class ="form-label">User Type</label>
+                            <select class="inline-form-element" name="userSearchTerm" >
+                                <option value="">Please Select a User type</option>
+                                <option value="Administrator">Administrator</option>
+                                <option value="Manager">Manager</option>
+                                <option value="Employee">Employee</option>
+                            </select>
+                        </div>
+                        <input id="byUserTypeBtn" type="button" value="Search" class="btn-face">
+                    </div>
+                </form>
+                <div class="row">
+                    <div class="column">User Type</div>
+                    <div class="column">First Name</div>
+                    <div class="column">Last Name</div>
+                    <div class="column">Gender</div>
+                    <div class="column">Email Address</div>
+                    <div class="column">Salary</div>
+                </div>
+                <div class="searchResults"></div>
+            </div>
+            <div class="tab" id="byUserPay">
+                <h3 class="sub-heading">Search Users by Pay Range</h3><span class="errMessage"></span><hr>
+                <form id="userPayForm">
+                    <div>
+                        <div class="inline-form-element-wrapper">
+                            <label class ="form-label">Pay from</label>
+                            <input type="number" class="inline-form-element" name="userPayFrom" min="0" max="999999" step="any">
+                        </div>
+                        <div class="inline-form-element-wrapper">
+                            <label class ="form-label">Pay To</label>
+                            <input type="number" class="inline-form-element" name="userPayTo" min="0" max="999999" step="any">
+                        </div>
+                        <input id="byUserPayBtn" type="button" value="Search" class="btn-face">
+                    </div>
+                </form>
+                <div class="row">
+                    <div class="column">User Type</div>
+                    <div class="column">First Name</div>
+                    <div class="column">Last Name</div>
+                    <div class="column">Gender</div>
+                    <div class="column">Email Address</div>
+                    <div class="column">Salary</div>
+                </div>
+                <div class="searchResults"></div>
+            </div>
+            <div class="tab" id="byUserName">
+                <h3 class="sub-heading">Search Users by Username</h3><hr>
+                <form id="userNameForm">
+                    <div>
+                        <div class="inline-form-element-wrapper">
+                            <label class ="form-label">Username</label>
+                            <input type="text" class="inline-form-element" name="userSearchTerm" >
+                        </div>
+                        <input id="byUserNameBtn" type="button" value="Search" class="btn-face">
+                    </div>
+                </form>
+                <div class="row">
+                    <div class="column">User Type</div>
+                    <div class="column">First Name</div>
+                    <div class="column">Last Name</div>
+                    <div class="column">Gender</div>
+                    <div class="column">Email Address</div>
+                    <div class="column">Salary</div>
+                </div>
+                <div class="searchResults"></div>
+            </div>
+            <div class="tab" id="byallMobileOptions">
+                <h3 class="sub-heading">Search Mobiles by all Options</h3><span class="errMessage"></span><hr>
+                <form id="mobileAllForm">
+                    <div>
+                        <div class="inline-form-element-wrapper">
+                            <label class ="form-label">Mobile Name</label>
+                            <input type="text" class="inline-form-element" name="mobileName" >
+                        </div>
+                        <div class="inline-form-element-wrapper">
+                            <label class ="form-label">Brand Name</label>
+                            <select id="brandListForAll" class="inline-form-element" name="mobileBrand">
+
+                            </select>
+                        </div>
+                        <div class="inline-form-element-wrapper">
+                            <label class ="form-label">System Name</label>
+                            <select id="OSListForAll" class="inline-form-element" name="mobileSystem">
+
+                            </select>
+                        </div>
+                        <div class="inline-form-element-wrapper">
+                            <label class ="form-label">Price from</label>
+                            <input type="number" class="inline-form-element" name="mobilePriceFrom" min="0" max="999999" step="any">
+                        </div>
+                        <div class="inline-form-element-wrapper">
+                            <label class ="form-label">Price To</label>
+                            <input type="number" class="inline-form-element" name="mobilePriceTo" min="0" max="999999" step="any">
+                        </div>
+                        <input id="byallMobileOptionsBtn" type="button" value="Search" class="btn-face">
+                    </div>
+                </form>
+                <div class="row">
+                    <div class="column">Mobile Name</div>
+                    <div class="column">Mobile Price</div>
+                    <div class="column">Quantity</div>
+                    <div class="column">Screen Size</div>
+                    <div class="column">Internal Memory</div>
+                    <div class="column">RAM</div>
+                </div>
+                <div class="searchResults"></div>
+            </div>
+            <div class="tab" id="byAllUserOptions">
+                <h3 class="sub-heading">Search Users by all options</h3><span class="errMessage"></span><hr>
+                <form id="userAllOptions">
+                    <div>
+                        <div class="inline-form-element-wrapper">
+                            <label class ="form-label">Username</label>
+                            <input type="text" class="inline-form-element" name="userName" >
+                        </div>
+                        <div class="inline-form-element-wrapper">
+                            <label class ="form-label">User Type</label>
+                            <select class="inline-form-element" name="userType" >
+                                <option value="">Please Select a User type</option>
+                                <option value="Administrator">Administrator</option>
+                                <option value="Manager">Manager</option>
+                                <option value="Employee">Employee</option>
+                            </select>
+                        </div>
+                        <div class="inline-form-element-wrapper">
+                            <label class ="form-label">Pay from</label>
+                            <input type="number" class="inline-form-element" name="userPayFrom" min="0" max="999999" step="any">
+                        </div>
+                        <div class="inline-form-element-wrapper">
+                            <label class ="form-label">Pay To</label>
+                            <input type="number" class="inline-form-element" name="userPayTo" min="0" max="999999" step="any">
+                        </div>
+                        <input id="byAllUserBtn" type="button" value="Search" class="btn-face">
+                    </div>
+                </form>
+                <div class="row">
+                    <div class="column">User Type</div>
+                    <div class="column">First Name</div>
+                    <div class="column">Last Name</div>
+                    <div class="column">Gender</div>
+                    <div class="column">Email Address</div>
+                    <div class="column">Salary</div>
+                </div>
+                <div class="searchResults"></div>
+            </div>
+            <div class="tab" id="bySale">
+                <h3 class="sub-heading">Search Mobiles by sale options</h3><span class="errMessage"></span><hr>
+                <form id="bySaleOptions">
+                    <div>
+                        <div class="inline-form-element-wrapper">
+                            <label class ="form-label">Product Name</label>
+                            <select id="saleMobileList" type="text" class="inline-form-element" name="mobileID" >
+
+                            </select>
+                        </div>
+                        <div class="inline-form-element-wrapper">
+                            <label class ="form-label">Brand Name</label>
+                            <select id="saleBrandList" type="text" class="inline-form-element" name="mobileBrandID" >
+
+                            </select>
+                        </div>
+                        <div class="inline-form-element-wrapper">
+                            <label class ="form-label">Operating System</label>
+                            <select id="saleSystemList" type="text" class="inline-form-element" name="mobileSystemID" >
+
+                            </select>
+                        </div>
+
+                    </div>
+                    <div>
+                        <div class="inline-form-element-wrapper">
+                            <label class ="form-label">Price From</label>
+                            <input type="number" class="inline-form-element" name="salePriceFrom" min="0" max="999999" step="any">
+                        </div>
+                        <div class="inline-form-element-wrapper">
+                            <label class ="form-label">Price to</label>
+                            <input type="number" class="inline-form-element" name="salePriceTo" min="0" max="999999" step="any">
+                        </div>
+                    </div>
+                    <div>
+                        <div class="inline-form-element-wrapper">
+                            <label class ="form-label">Sale Date From</label>
+                            <input type="date" class="inline-form-element" name="saleDateFrom" >
+                        </div>
+                        <div class="inline-form-element-wrapper">
+                            <label class ="form-label">Sale Date to</label>
+                            <input type="date" class="inline-form-element" name="saleDateTo" >
+                        </div>
+                        <div class="inline-form-element-wrapper">
+                            <input id="bySaleBtn" type="button" value="Search" class="submit-btn">
+                      </div>
+                    </div>
+
+                </form>
+                <div class="row">
+                    <div class="column">Sale ID</div>
+                    <div class="column">Mobile Name</div>
+                    <div class="column">Original Price</div>
+                    <div class="column">Percentage Off</div>
+                    <div class="column">New Price</div>
+                    <div class="column">Sale Date From</div>
+                    <div class="column">Sale Date To</div>
+                </div>
+                <div class="searchResults"></div>
+            </div>
+            <div class="tab" id="byOrder">
+                <h3 class="sub-heading">Search orders</h3>
+                <span class="errMessage"></span><hr>
+                <form id="byOrderOptions">
+                    <div>
+                        <label><input type="radio" class="inline-form-element" name="byDate" value="0" checked>None</label>
+                        <label><input type="radio" class="inline-form-element" name="byDate" value="1" >Today</label>
+                        <label><input type="radio" class="inline-form-element" name="byDate" value="2">Date Range</label>
+                        <div class="inline-form-element-wrapper">
+                            <label class ="form-label">Order Date From</label>
+                            <input type="date" class="inline-form-element" name="from" required>
+                        </div>
+                        <div class="inline-form-element-wrapper">
+                            <label class ="form-label">Order Date to</label>
+                            <input type="date" class="inline-form-element" name ="to" required>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="inline-form-element-wrapper">
+                            <label class ="form-label">Show</label>
+                            <label><input type="radio" class="inline-form-element" name="sumBy" value="0" checked>Total Sales</label>
+                            <label><input type="radio" class="inline-form-element" name="sumBy" value="1">Quantity</label>
+                            <label><input type="radio" class="inline-form-element" name="sumBy" value="2">Amount</label>
+                        </div>
+                    </div>
+                    <div id="groupByOptions" style="display: none;">
+                        <div class="inline-form-element-wrapper">
+                            <label class ="form-label">Group by options</label>
+
+                            <label><input type="radio" class="inline-form-element" name="groupBy" value="0" checked>None</label>
+
+                            <div class="groupBySelect">
+                                <label><input type="radio" class="inline-form-element" name="groupBy" value="1">Mobile OS</label>
+                                <select disabled class="inline-form-element" name="productOSID" id="groupByOS"></select>
+                            </div><br>
+
+                            <div class="groupBySelect">
+                                <label><input type="radio" class="inline-form-element" name="groupBy" value="2">Mobile Brand</label>
+                                <select disabled class="inline-form-element" name="productBrandID" id="groupByBrand"></select>
+                            </div><br>
+
+                            <div class="groupBySelect">
+                                <label><input type="radio" class="inline-form-element" name="groupBy" value="3">Product</label>
+                                <select disabled class="inline-form-element" name="productID" id="groupByProduct"></select>
+                            </div><br>
+
+                            <div class="groupBySelect">
+                                <label><input type="radio" class="inline-form-element" name="groupBy" value="4">Sales Items</label>
+                                <select disabled class="inline-form-element" name="saleProductID" id="groupBySaleProduct"></select>
+                            </div><br>
+
+
+                        </div>
+                        <div id="sortOptions">
+                            <div class="inline-form-element-wrapper">
+                                <label class ="form-label">Order by options</label>
+                                <label><input type="radio" class="inline-form-element" name="orderBy" value="0" checked>Ascending</label>
+                                <label><input type="radio" class="inline-form-element" name="orderBy" value="1">Descending</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <input id="byOrderBtn" type="button" value="Search" class="btn-face">
+                </form>
+                <div class="row"></div>
+                <div class="searchResults"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

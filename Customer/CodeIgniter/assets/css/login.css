@@ -1,0 +1,433 @@
+
+body{
+    background-color:whitesmoke;
+}
+
+.main-header{
+    background: #027cd5;
+}
+
+input:focus,textarea:focus,select:focus{
+    outline:0;
+    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+    border: 1px solid rgba(81, 203, 238, 1);
+}
+
+input[type="month"]:before {
+    content: attr(placeholder) !important;
+    color: #aaa;
+    margin-right: 0.5em;
+}
+input[type="month"]:focus:before,
+input[type="month"]:valid:before {
+    content: "";
+}
+
+.logo:hover{
+    cursor: pointer;
+}
+
+.logo h3{
+    float: left;
+    font-weight: bolder;
+    color:#ffffff;
+}
+
+.logo img{
+    float:left;
+    margin-right: 8px;
+}
+
+.sign-options a:hover{
+    text-decoration: underline;
+}
+
+.sign-options a{
+    text-decoration: none;
+    color: rgba(255, 255, 255, 1);
+    display: block;
+    padding: 0 10px 0px 30px;
+    line-height: 23px;
+    margin: 0 13px 0 0;
+    font-size: large;
+    cursor: pointer;
+}
+
+
+.ui-widget-header{
+    border:none !important;
+    background: none !important;
+    color:#736F6F !important;
+}
+
+.btn-left{
+    float: right;
+    padding: 6px 12px;
+    color: #fff;
+    background-color: #337ab7;
+    border: 1px solid transparent;
+    cursor: pointer;
+    margin: 13px 0 0 0;
+    font-size: 14px !important;
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
+.sign-up-link,.login-link{
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.sign-up-link span,.login-link span{
+    color:#337ab7;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#contact-information, #credit-card-information{
+    display: none;
+}
+
+.errorMessage{
+    color:red;
+    font-size: 12px !important;
+}
+
+/**desktop */
+@media screen
+and (min-width: 1025px)
+and (max-width: 2000px) {
+    .logo{
+        margin-left:60px;
+        float: left;
+    }
+    .sign-options ul {
+        list-style: none;
+        float: right;
+    }
+
+    .sign-options li{
+        border-right: 1px solid rgba(255,255,255,0.2);
+        float: right;
+        vertical-align: middle;
+    }
+
+    .phone-images{
+        margin:60px;
+    }
+
+    .phone-images div{
+        float: left;
+    }
+
+    .inline-form-element{
+        width: 300px;
+        height: 35px;
+        font-size: 15px !important;
+        padding-left: 15px;
+        color: #333;
+        background: #fff;
+        border: 1px solid #c3c3c3;
+        margin-bottom: 10px;
+    }
+
+    .login-btn{
+        color: #fff;
+        background-color: #337ab7;
+        cursor: pointer;
+        border: 1px solid transparent;
+        width: 318px;
+        padding: 10px 16px;
+        font-size: 16px !important;
+        line-height: 1.3333333;
+    }
+
+    .image1{
+        height:500px
+    }
+
+    .image2{
+        height:500px
+    }
+
+    .image3{
+        height:500px;
+        width:400px;
+    }
+}
+
+/** tablets landscape*/
+@media only screen
+and (min-width: 768px)
+and (max-width: 1024px)
+and (orientation: landscape) {
+
+    .logo{
+        margin-left:60px;
+        float: left;
+    }
+    .sign-options ul {
+        list-style: none;
+        float: right;
+    }
+
+    .sign-options li{
+        border-right: 1px solid rgba(255,255,255,0.2);
+        float: right;
+        vertical-align: middle;
+    }
+
+    .phone-images{
+        margin: 60px;
+    }
+
+    .phone-images div{
+        float: left;
+    }
+
+    .inline-form-element{
+        width: 300px;
+        height: 35px;
+        font-size: 15px !important;
+        padding-left: 15px;
+        color: #333;
+        background: #fff;
+        border: 1px solid #c3c3c3;
+        margin-bottom: 10px;
+    }
+
+    .login-btn{
+        color: #fff;
+        background-color: #337ab7;
+        cursor: pointer;
+        border: 1px solid transparent;
+        width: 318px;
+        padding: 10px 16px;
+        font-size: 16px !important;
+        line-height: 1.3333333;
+        -webkit-appearance: none;
+        border-radius: 0;
+    }
+
+    .image1{
+        height:400px;
+    }
+
+    .image2{
+        height:400px;
+    }
+
+    .image3{
+        height:400px;
+        width:290px;
+    }
+}
+
+/* tablet Portrait */
+@media only screen
+and (min-width: 768px)
+and (max-width: 1024px)
+and (orientation: portrait) {
+    .logo{
+        margin-left:60px;
+        float: left;
+    }
+    .signOptions{
+        display: inline-block;
+        vertical-align: super;
+    }
+
+    .sign-options ul {
+        list-style: none;
+        margin-left: -22px;
+    }
+
+    .sign-options li {
+        margin-top: 10px;
+    }
+
+    .sign-options{
+        display: inline-block;
+    }
+
+    .phone-images{
+        margin: 60px;
+    }
+
+    .phone-images div{
+        float: left;
+    }
+
+    .inline-form-element{
+        width: 300px;
+        height: 35px;
+        font-size: 15px !important;
+        padding-left: 15px;
+        color: #333;
+        background: #fff;
+        border: 1px solid #c3c3c3;
+        margin-bottom: 10px;
+    }
+
+    .login-btn{
+        color: #fff;
+        background-color: #337ab7;
+        cursor: pointer;
+        border: 1px solid transparent;
+        width: 318px;
+        padding: 10px 16px;
+        font-size: 16px !important;
+        line-height: 1.3333333;
+        -webkit-appearance: none;
+        border-radius: 0;
+    }
+
+    .image1{
+        height:400px;
+    }
+
+    .image2{
+        height:400px;
+    }
+
+    .image3{
+       display: none;
+    }
+}
+
+@media only screen
+and (min-width: 501px)
+and (max-width: 767px) {
+    .logo{
+        margin-left:60px;
+        float: left;
+    }
+    .sign-options ul {
+        list-style: none;
+        float: right;
+    }
+
+    .sign-options li{
+        border-right: 1px solid rgba(255,255,255,0.2);
+        float: right;
+        vertical-align: middle;
+    }
+
+    .phone-images{
+        margin: 60px;
+    }
+
+    .phone-images div{
+        float: left;
+    }
+
+    .inline-form-element{
+        width: 300px;
+        height: 35px;
+        font-size: 15px !important;
+        padding-left: 15px;
+        color: #333;
+        background: #fff;
+        border: 1px solid #c3c3c3;
+        margin-bottom: 10px;
+    }
+
+    .login-btn{
+        color: #fff;
+        background-color: #337ab7;
+        cursor: pointer;
+        border: 1px solid transparent;
+        width: 318px;
+        padding: 10px 16px;
+        font-size: 16px !important;
+        line-height: 1.3333333;
+        -webkit-appearance: none;
+        border-radius: 0;
+    }
+
+    .image1{
+        width:60%;
+        height: auto;
+    }
+
+    .image2{
+        width:70%;
+        height:auto;
+    }
+
+    .image3{
+        display: none;
+    }
+}
+
+
+/* Phone Portrait */
+@media only screen
+and (min-width: 0px)
+and (max-width: 500px) {
+
+    .logo {
+        display: inline-block;
+        margin-left: 17px;
+    }
+
+    .signOptions{
+        display: inline-block;
+        vertical-align: super;
+    }
+
+    .sign-options ul {
+        list-style: none;
+        margin-left: -22px;
+    }
+
+    .sign-options li {
+        margin-top: 10px;
+    }
+
+    .sign-options{
+        display: inline-block;
+    }
+
+    .phone-images{
+        margin: 20px 0 0 60px;
+    }
+
+    .inline-form-element{
+        width: 250px;
+        height: 35px;
+        font-size: 15px !important;
+        padding-left: 15px;
+        color: #333;
+        background: #fff;
+        border: 1px solid #c3c3c3;
+        margin-bottom: 9px;
+    }
+
+    .login-btn{
+        color: #fff;
+        background-color: #337ab7;
+        cursor: pointer;
+        border: 1px solid transparent;
+        width: 268px;
+        padding: 10px 16px;
+        font-size: 16px !important;
+        line-height: 1.3333333;
+        -webkit-appearance: none;
+        border-radius: 0;
+    }
+
+    .image1{
+        width:60%;
+        height: auto;
+    }
+
+    .image2{
+        width:70%;
+        height:auto;
+    }
+
+    .image3{
+        display: none;
+    }
+}
